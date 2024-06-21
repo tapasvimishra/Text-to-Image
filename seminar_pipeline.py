@@ -25,7 +25,7 @@ def generate_image_prompts(summary):
     prompt_ids = model.generate(
         input_ids, 
         max_length=50, 
-        num_beams=5,  # Use beam search
+        num_beams=5,
         num_return_sequences=5, 
         no_repeat_ngram_size=2
     )
@@ -69,5 +69,5 @@ def full_pipeline(input_text):
     print("Similarities:", similarities)
     
     return summary, prompts, images, similarities
-input_text = "Munich is a modern developed capital city in germany in the free state of Bavaria"
+input_text = "Munich is a modern developed capital city in germany in the free state of Bavari" #Change the prompt here to get the image results 
 summary, prompts, images, similarities = full_pipeline(input_text)
